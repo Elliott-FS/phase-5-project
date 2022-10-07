@@ -33,6 +33,21 @@ img{
   display: inline-grid;
   margin: 1rem 2rem;
   box-shadow: 3px 4px black;
-  background-color: whitesmoke;
+  background: linear-gradient(white, #87CEEB);
+  border-radius: 10px;
+  font-family: "Times New Roman", Times, serif;
+ }
+
+ .urgames-card:hover{
+    text-align: center;
+    border: grey solid 1px;
+    padding: 1rem;
+    width: 8rem;
+    height: 13rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px white;
+    background: linear-gradient(white, #87CEEB);
+    transform: scale(1.3);
  }
 `

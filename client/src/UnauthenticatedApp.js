@@ -80,6 +80,7 @@ function UnauthenticatedApp({setCurrentUser}){
         <header>
         <HomeBanner>
         <img src="https://i.pinimg.com/originals/9b/b6/a7/9bb6a7614a85d8585f1c4cfb246bc528.jpg" alt='home-banner' />
+        <h2>Playbliss.com</h2>
         <h1>Please Sign-up or Login to Continue</h1>
         </HomeBanner>
         </header>
@@ -134,7 +135,7 @@ img{
     z-index: -1
 }
 
-h1{
+h1, h2{
     color: whitesmoke;
     display: center;
 }

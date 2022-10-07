@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 import {useState} from 'react'
 import UrGamesCard from './UrGamesCard'
+import {useNavigate} from 'react-router-dom'
 
 function UrGames({currentUser}){
     
 const [playlistName, setPlaylistName] = useState("")
+const navigate = useNavigate()
 
    const [ulGameName, setUlGameName] = useState("")
    const [urGameId, setUrGameId] = useState("")
@@ -24,7 +26,7 @@ const [playlistName, setPlaylistName] = useState("")
        method:"POST",
        headers: {'Content-Type':'application/json'},
        body: JSON.stringify(playlistGame)
- })
+ }).then(navigate("/games"))
 })
  
     return (

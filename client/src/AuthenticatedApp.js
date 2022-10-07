@@ -34,11 +34,14 @@ function AuthenticatedApp ({currentUser, setCurrentUser}){
     // console.log(currentUser)
 
     // Games Fetch
+const [searchGames, setSearchGames] = useState([])
+
 const [gamesData, setGamesData] = useState([])
 useEffect(() => {
     fetch("/games")
     .then(res => res.json())
-    .then(data => setGamesData(data))
+    .then((data) => {setGamesData(data)
+                     setSearchGames(data)})
   },[])
 
 //   login/logout/signup functions
@@ -97,6 +100,17 @@ useEffect(() => {
 
 //   Admin Game Forms
 
+function getSearchBar(whatIsTyped) {
+  let resultOfFilter = searchGames.filter(
+      (eachGame) => {
+          if (
+              eachGame.console.toLowerCase().includes(whatIsTyped.toLowerCase())
+          )
+          return (eachGame)
+      })
+     setGamesData(resultOfFilter)
+} 
+
 function getNewGame(newGameObj){
     // console.log(newGameObj)
     setGamesData([...gamesData, newGameObj])
@@ -107,13 +121,14 @@ function getNewGame(newGameObj){
     })
   }
 
+
     return (   
         <div className="Auth-App">
          {/* render components here */}
                 <Header handleLogout={handleLogout} />
                 <Routes>
                     <Route path="/" element={<Home />}/>
-                    <Route path="/games" element={<Games arrayOfGames={gamesData} currentUser={currentUser} />}/>
+                    <Route path="/games" element={<Games arrayOfGames={gamesData} currentUser={currentUser} sendUpSearch={getSearchBar}  />}/>
                     <Route path="/adminforms" element={<AdminForms sendNewGame={getNewGame} />}/>
                     <Route path="profile" element={<Profile currentUser={currentUser} />}/>
                 </Routes>

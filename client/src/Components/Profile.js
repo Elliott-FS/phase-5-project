@@ -13,7 +13,7 @@ return (
        <ProfileStyle>
        <div className="profile">
        <h2>{currentUser.username}</h2>
-       <img src={currentUser.image_url} alt="profile pic"/>
+       {/* <img src="https://static.wikia.nocookie.net/dexterslab/images/f/f9/DexterS1-2.png/revision/latest?cb=20210813225110" alt="profile pic"/> */}
        </div>
        </ProfileStyle>
        <UrGames currentUser={currentUser} />

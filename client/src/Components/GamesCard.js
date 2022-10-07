@@ -52,7 +52,21 @@ img{
   height: 13rem;
   display: inline-grid;
   margin: 1rem 2rem;
-  box-shadow: 3px 4px grey;
-  background-color: whitesmoke;
+  box-shadow: 3px 4px silver;
+  background: linear-gradient(#e66465, #9198e5);
+  border-radius: 10px;
+ }
+
+ .games-card:hover{
+    text-align: center;
+    border: white solid 1px;
+    padding: 1rem;
+    width: 8rem;
+    height: 13rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px white;
+    background: linear-gradient(#e66465, #9198e5);
+    transform: scale(1.3);
  }
 `

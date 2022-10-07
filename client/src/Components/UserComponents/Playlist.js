@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 import {useState, useEffect} from 'react'
+import PlaylistDetail from './PlaylistDetail'
+import {useNavigate} from 'react-router-dom'
 
 function Playlist({currentUser}){
-   
+    const navigate = useNavigate()
     const [playlistName, setPlaylistName] = useState("")
     const [userPlaylists, setUserPlaylists] = useState([])
 
@@ -24,28 +26,19 @@ function Playlist({currentUser}){
            method:"POST",
            headers: {'Content-Type':'application/json'},
            body: JSON.stringify(newPlaylist)
-       })
+       }).then(navigate("/games"))
+       
      })
     
     
     return (
         <div>
-            <div>{userPlaylists.map((eachList) => {
+            <FormStyle>
+            <div className='playlist-section'>{userPlaylists.map((eachList) => {
                 return (
-                    <div>
-                        <h2>{eachList.name}</h2>
-                        <h4>{eachList.id}</h4>
-                        <h3>{eachList.ul_games.map((eachGame) => {
-                            return (<div>
-                               <h3>{eachGame.name}</h3>
-                               <h5>{eachGame.console}</h5>
-                            </div>)
-                        })}</h3>
-                    </div>
+                   <PlaylistDetail key={eachList.id} eachList={eachList}/>
                 )
             })}</div>
-
-            <FormStyle>
              <form className="playlist-form" onSubmit={handlePlaylistSubmit}>
                 <input
                 className="name" 
@@ -69,7 +62,11 @@ form{
     font-family: 'Montserrat', sans-serif;
     width: 75%;
     margin: 60px;
-    position: fixed;
-    bottom: -25px
+    // position: fixed;
+    // bottom: -25px
+}
+.playlist-section{
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 `

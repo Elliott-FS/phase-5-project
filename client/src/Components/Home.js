@@ -39,7 +39,7 @@ function Home(){
         <header>
             <HomeBanner>
             <img src="https://i.pinimg.com/originals/9b/b6/a7/9bb6a7614a85d8585f1c4cfb246bc528.jpg" alt='home-banner' />
-            <h1>Welcome</h1>
+            <h1>Playbliss.com: Welcome</h1>
             <h3>Profile: See your games collection and create playlists.</h3>
             <h3>AdminForms: Admins can update the website from this page. </h3>
             </HomeBanner>
