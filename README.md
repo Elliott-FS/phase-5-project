@@ -1,3 +1,15 @@
+Hello my name is Elliott Wynn III and this is my phase 5 project from Flatiron school.
+The website is called 'Playbliss.com' and is designed to allow users to catalog thier collection of video games and organize them into playlist. With the advent of digital gaming more and more gamers are downloading games digitally
+and are forced to buy then delete games in order to create room for new titles. This app addreses that issue by allowing the user to keep track of what gams they have and what they will play next or are currently playing through. This project was made with a backend API built in Ruby on Rails and a reactJS client side. 
+
+From the home page sign-up to make an account then use the games page to build out your collection. From the profile page you can create playlist of games that you would like to play.
+
+Thank you for your interest more projects to come. 
+
+
+
+
+
 # Project Template: React/Rails API
 
 ## Description
